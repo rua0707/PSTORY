@@ -1,0 +1,15 @@
+{% extends "registration/base.html" %}
+
+{% block title %}로그인{% endblock %}
+{% block page %}login{% endblock %}
+
+{% block content %}
+
+<form method="POST" action="{% url 'login' %}">
+{% csrf_token %}
+<input type="hidden" name="text" value="" />
+{{ form.as_p }}
+<button type="submit">로그인</button>
+</form>
+
+{% endblock %}
